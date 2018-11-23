@@ -581,7 +581,7 @@ export class DirectLine implements IBotConnection {
                     "Authorization": `Bearer ${this.token}`
                 }
             })
-            .map(ajaxResponse => ajaxResponse.response.id as string)
+            .map(ajaxResponse => ajaxResponse as AjaxRequest)
             .catch(error => this.catchPostError(error))
         )
         .catch(error => this.catchPostError(error));
